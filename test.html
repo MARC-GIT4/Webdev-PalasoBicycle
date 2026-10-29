@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aero Bakfiets | The Ultimate Urban Cargo</title>
+    <title>Palaso Bakfiets | The Ultimate Urban Cargo</title>
     <style>
         
         :root {
-            --bg-color: #0a0a0a;
-            --text-main: #ffffff;
-            --text-muted: #888888;
+            --bg-color: #fe5900;
+            --bg-color2: #fe5900;
+            --text-main: #fffacd;
+            --text-main2: #fffacd;
+            --text-muted: #fffacd;
+            --text-muted: #fe5900;
             --accent: #e6e6e6;
-            --btn-bg: #ffffff;
+            --btn-bg: #fe5900;
+            --btn-bg2: #fffacd;
             --btn-text: #000000;
         }
 
@@ -25,11 +29,11 @@
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-main);
+            color: var(--text-main2);
             line-height: 1.5;
         }
 
-        /* 1. HEADER - Minimalist, no diverging navigation */
+        /* 1. HEADER */
         header {
             position: fixed;
             top: 0;
@@ -38,7 +42,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(10, 10, 10, 0.85);
+            background: #fe5900;
             backdrop-filter: blur(10px);
             z-index: 100;
         }
@@ -51,7 +55,7 @@
         }
 
         .btn {
-            background-color: var(--btn-bg);
+            background-color: var(--btn-bg2);
             color: var(--btn-text);
             padding: 12px 24px;
             border-radius: 30px;
@@ -74,8 +78,8 @@
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            /* In a real project, add a dark, moody background image of the bike here */
-            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+            /* add a background image of the bike here */
+            background: #fffacd 100%;
         }
 
         .hero h1 {
@@ -93,7 +97,7 @@
             margin-bottom: 40px;
         }
 
-        /* 3. CONTENT / SPECS - Minimalist Grid */
+        /* 3. CONTENT / SPECS  */
         .specs {
             padding: 120px 20px;
             max-width: 1200px;
@@ -127,7 +131,7 @@
             color: var(--text-muted);
         }
 
-        /* 4. CALL TO ACTION - Bottom Squeeze */
+        /* 4. CALL TO ACTION */
         .bottom-cta {
             padding: 120px 20px;
             text-align: center;
@@ -140,7 +144,7 @@
             letter-spacing: -1px;
         }
 
-        /* 5. FOOTER - Bare minimum legal links */
+        /* 5. FOOTER */
         footer {
             padding: 40px 20px;
             text-align: center;
@@ -152,20 +156,20 @@
 </head>
 <body>
 
-    <!-- HEADER: Zero external links. Only the brand and the primary goal. -->
+    <!-- HEADER -->
     <header>
-        <div class="logo">Aero</div>
+        <div class="logo">Palaso</div>
         <a href="#preorder" class="btn">Pre-order now</a>
     </header>
 
-    <!-- HERO: Sets the mood, presents the value, demands action. -->
+    <!-- HERO -->
     <section class="hero">
         <h1>Move everything.</h1>
         <p>The electric bakfiets engineered for the modern family. Zero emissions, infinite possibilities. Shipping Spring 2027.</p>
         <a href="#preorder" class="btn" style="padding: 16px 32px; font-size: 1.1rem;">Reserve for $100</a>
     </section>
 
-    <!-- CONTENT: Feature highlights to build desire without clicking away. -->
+    <!-- CONTENT: Feature highlights. -->
     <section class="specs">
         <h2>Flawless design. Maximum payload.</h2>
         <div class="grid">
@@ -184,16 +188,16 @@
         </div>
     </section>
 
-    <!-- CALL TO ACTION: The final conversion point at the end of the scroll. -->
+    <!-- CALL TO ACTION. -->
     <section class="bottom-cta" id="preorder">
         <h2>Ready to ride?</h2>
-        <p style="color: #888; margin-bottom: 40px;">Secure your production slot today with a fully refundable deposit.</p>
+        <p style="color: #fe5900; margin-bottom: 40px;">Secure your production slot today with a fully refundable deposit.</p>
         <a href="#" class="btn" style="padding: 16px 40px; font-size: 1.2rem;">Pre-order now</a>
     </section>
 
-    <!-- FOOTER: Dead-end to prevent users from getting lost in a site map. -->
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2027 Aero Cargo Bikes. All rights reserved. | Terms | Privacy</p>
+        <p>&copy; 2027 Palaso Cargo Bikes. All rights reserved. | Terms | Privacy</p>
     </footer>
 
 </body>
