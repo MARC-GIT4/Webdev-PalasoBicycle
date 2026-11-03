@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-20">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experience the perfect blend of playful design, premium safety features, and effortless electric power with Palaso Bicycle E-Bikes.">
+    <title>Palaso Bicycle — Modern E-Bike Landing Page</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased overflow-x-hidden selection:bg-brand-yellow selection:text-brand-dark">
+
+    <!-- ==========================================
+         HEADER / NAVIGATION SECTION
+         ========================================== -->
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- BRAND LOGO -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center gap-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-dark rounded">
+                        <i class="ph-fill ph-bicycle text-4xl text-brand-accent" aria-hidden="true"></i>
+                        <span class="font-bold text-2xl tracking-tight">Palaso Bicycle.</span>
+                    </a>
+                </div>
+
+                <!-- DESKTOP NAVIGATION -->
+                <nav class="hidden md:flex space-x-8" aria-label="Main Navigation">
+                    <a href="#features" class="text-brand-dark hover:text-brand-accent font-medium transition-colors">Features</a>
+                    <a href="#details" class="text-brand-dark hover:text-brand-accent font-medium transition-colors">Details</a>
+                    <a href="#reviews" class="text-brand-dark hover:text-brand-accent font-medium transition-colors">Reviews</a>
+                </nav>
+
+                <!-- CALL TO ACTION BUTTON (DESKTOP) -->
+                <div class="hidden md:flex items-center">
+                    <a href="#buy" class="bg-brand-yellow text-brand-dark hover:bg-yellow-400 font-bold py-2.5 px-6 rounded-full transition-transform hover:scale-105 shadow-sm">
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- MOBILE MENU BUTTON  -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" aria-label="Toggle Menu" aria-expanded="false" aria-controls="mobile-menu" class="text-brand-dark hover:text-brand-accent p-2 rounded-lg focus-visible:outline-2 focus-visible:outline-brand-dark">
+                        <i class="ph ph-list text-3xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MOBILE NAVIGATION MENU -->
+        <nav id="mobile-menu" aria-label="Mobile Navigation" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#features" class="block px-3 py-3 rounded-md text-base font-medium text-brand-dark hover:bg-gray-50">Features</a>
+                <a href="#details" class="block px-3 py-3 rounded-md text-base font-medium text-brand-dark hover:bg-gray-50">Details</a>
+                <a href="#reviews" class="block px-3 py-3 rounded-md text-base font-medium text-brand-dark hover:bg-gray-50">Reviews</a>
+                <a href="#buy" class="block w-full text-center mt-4 bg-brand-yellow text-brand-dark font-bold py-3 px-6 rounded-full">Order Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==========================================
+         MAIN CONTENT LANDMARK
+         ========================================== -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden bg-brand-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
+                    
+                    <!-- HERO TEXT CONTENT -->
+                    <div class="lg:col-span-6 text-center lg:text-left mb-12 lg:mb-0">
+                        <span class="inline-block py-1 px-3 rounded-full bg-yellow-100 text-yellow-900 text-sm font-semibold mb-6 tracking-wide uppercase">
+                            New 2026 Model
+                        </span>
+                        
+                        <h1 class="text-4xl sm:text-6xl font-extrabold text-brand-dark leading-tight mb-6">
+                            The ultimate ride for your <span class="underline decoration-brand-yellow decoration-8 underline-offset-4">daily adventures.</span>
+                        </h1>
+                        
+                        <p class="text-lg text-brand-gray mb-8 max-w-2xl mx-auto lg:mx-0">
+                            Experience the perfect blend of playful design, premium safety features, and effortless electric power. Built for families, commuters, and everyone in between.
+                        </p>
+                        
+                        <!-- HERO BUTTONS -->
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#buy" class="bg-brand-dark text-white hover:bg-gray-800 font-bold py-4 px-8 rounded-full text-lg transition-transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
+                                Configure Yours <i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+                            </a>
+                            <a href="#features" class="bg-white text-brand-dark border-2 border-gray-200 hover:border-gray-300 font-bold py-4 px-8 rounded-full text-lg transition-colors flex items-center justify-center">
+                                Explore Features
+                            </a>
+                        </div>
+                        
+                        <!-- TRUST INDICATORS -->
+                        <div class="mt-10 flex items-center justify-center lg:justify-start gap-4 text-sm text-brand-gray font-medium">
+                            <div class="flex gap-1 text-brand-accent" aria-label="Rated 4.9 out of 5 stars">
+                                <i class="ph-fill ph-star" aria-hidden="true"></i>
+                                <i class="ph-fill ph-star" aria-hidden="true"></i>
+                                <i class="ph-fill ph-star" aria-hidden="true"></i>
+                                <i class="ph-fill ph-star" aria-hidden="true"></i>
+                                <i class="ph-fill ph-star" aria-hidden="true"></i>
+                            </div>
+                            <span>4.9/5 from 2,000+ riders</span>
+                        </div>
+                    </div>
+
+                    <!-- HERO IMAGE -->
+                    <div class="lg:col-span-6 relative">
+                        <div class="absolute inset-0 blob-bg transform scale-110 opacity-40 z-0 hidden md:block" aria-hidden="true"></div>
+                        <img 
+                            src="https://placehold.co/800x600/FFD700/1A1A1A?text=E-Bike+Hero+Image" 
+                            alt="Yellow 2026 Palaso Bicycle cargo e-bike side profile" 
+                            width="800"
+                            height="600"
+                            class="relative z-10 w-full h-auto drop-shadow-2xl rounded-2xl transform transition-transform hover:-translate-y-2 duration-500"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES GRID SECTION -->
+        <section id="features" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Why choose Palaso Bicycle?</h2>
+                    <p class="text-lg text-brand-gray">We stripped away the unnecessary to focus on what truly matters: safety, comfort, and undeniable style.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- FEATURE 1 -->
+                    <div class="p-8 rounded-3xl bg-brand-light shadow-soft border border-gray-100 text-center hover:-translate-y-1 transition-transform duration-300">
+                        <div class="w-16 h-16 mx-auto bg-brand-yellow text-brand-dark rounded-full flex items-center justify-center mb-6 shadow-md">
+                            <i class="ph ph-lightning text-3xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-brand-dark">Powerful Motor</h3>
+                        <p class="text-brand-gray">Conquer hills and strong headwinds effortlessly with our custom-tuned 250W electric assist motor.</p>
+                    </div>
+
+                    <!-- FEATURE 2 -->
+                    <div class="p-8 rounded-3xl bg-brand-light shadow-soft border border-gray-100 text-center hover:-translate-y-1 transition-transform duration-300">
+                        <div class="w-16 h-16 mx-auto bg-brand-yellow text-brand-dark rounded-full flex items-center justify-center mb-6 shadow-md">
+                            <i class="ph ph-shield-check text-3xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-brand-dark">Premium Safety</h3>
+                        <p class="text-brand-gray">Equipped with hydraulic disc brakes and integrated LED lighting to keep you visible and secure.</p>
+                    </div>
+
+                    <!-- FEATURE 3 -->
+                    <div class="p-8 rounded-3xl bg-brand-light shadow-soft border border-gray-100 text-center hover:-translate-y-1 transition-transform duration-300">
+                        <div class="w-16 h-16 mx-auto bg-brand-yellow text-brand-dark rounded-full flex items-center justify-center mb-6 shadow-md">
+                            <i class="ph ph-paint-brush text-3xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-brand-dark">Custom Colors</h3>
+                        <p class="text-brand-gray">Express yourself. Choose from over 40 color combinations to make the ride uniquely yours.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT DETAILS -->
+        <section id="details" class="py-24 bg-brand-light overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+                
+                <!-- DETAIL ROW 1 -->
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                    <div class="mb-10 lg:mb-0 order-2 lg:order-1">
+                        <img src="https://placehold.co/600x500/1A1A1A/FFFFFF?text=Family+Riding+Bike" alt="Parent riding the e-bike with two children seated safely in the front cabin" loading="lazy" class="rounded-3xl shadow-xl w-full object-cover">
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">Designed for the whole family.</h2>
+                        <p class="text-lg text-brand-gray mb-6">
+                            The spacious front box is crafted with high-impact, double-walled material. It easily fits two children, groceries, or even your furry best friend, all while maintaining perfect balance.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3 text-brand-dark font-medium">
+                                <i class="ph-fill ph-check-circle text-brand-accent text-xl" aria-hidden="true"></i> Seats up to 3 kids
+                            </li>
+                            <li class="flex items-center gap-3 text-brand-dark font-medium">
+                                <i class="ph-fill ph-check-circle text-brand-accent text-xl" aria-hidden="true"></i> Weather-proof materials
+                            </li>
+                            <li class="flex items-center gap-3 text-brand-dark font-medium">
+                                <i class="ph-fill ph-check-circle text-brand-accent text-xl" aria-hidden="true"></i> 5-point safety harnesses included
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- DETAIL ROW 2 -->
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                    <div class="mb-10 lg:mb-0 order-1">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">A joy to ride, easy to park.</h2>
+                        <p class="text-lg text-brand-gray mb-6">
+                            Despite its carrying capacity, our lightweight frame and robust kickstand mean anyone can ride and park with confidence. The low center of gravity ensures a smooth ride on tight city streets.
+                        </p>
+                        <a href="#buy" class="inline-flex items-center gap-2 text-brand-dark font-bold hover:text-brand-accent transition-colors border-b-2 border-brand-yellow pb-1">
+                            Reserve a test ride <i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="order-2">
+                        <img src="https://placehold.co/600x500/1A1A1A/FFFFFF?text=Kickstand+and+Frame+Close-up" alt="Close-up of the lightweight aluminum frame and heavy-duty kickstand" loading="lazy" class="rounded-3xl shadow-xl w-full object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- MOCK REVIEWS -->
+        <section id="reviews" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Loved by riders everywhere.</h2>
+                    <p class="text-lg text-brand-gray">Don't just take our word for it.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- REVIEW 1 -->
+                    <article class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm relative">
+                        <i class="ph-fill ph-quotes text-4xl text-gray-200 absolute top-6 right-6" aria-hidden="true"></i>
+                        <div class="flex gap-1 text-brand-accent mb-4 text-xl" aria-label="5 out of 5 stars">
+                            <i class="ph-fill ph-star" aria-hidden="true"></i><i class="ph-fill ph-star" aria-hidden="true"></i><i class="ph-fill ph-star" aria-hidden="true"></i><i class="ph-fill ph-star" aria-hidden="true"></i><i class="ph-fill ph-star" aria-hidden="true"></i>
+                        </div>
+                        <p class="text-brand-dark mb-6 text-lg">"Best purchase we've ever made for our family. School drop-offs are actually fun now, and we barely use our car!"</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://placehold.co/100x100?text=SJ" alt="Portrait of Sarah Jenkins" loading="lazy" class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <p class="font-bold text-brand-dark">Sarah Jenkins</p>
+                                <p class="text-sm text-brand-gray">Verified Buyer</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- REVIEW 2 -->
+                    <article class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm relative">
+                        <i class="ph-fill ph-quotes text-4xl text-gray-200 absolute top-6 right-6" aria-hidden="true"></i>
+                        <div class="flex gap-1 text-brand-accent mb-4 text-xl" aria-label="5 out of 5 stars">
+                            <i class="ph-fill ph-star" aria-hidden="true"></i><i class="ph-fill ph-star" aria-hidden="true"></i><i class="ph-fill ph-star" aria-hidden="true"></i><i class="ph-fill ph-star" aria-hidden="true"></i><i class="ph-fill ph-star" aria-hidden="true"></i>
+                        </div>
+                        <p class="text-brand-dark mb-6 text-lg">"The build quality is incredible. It feels sturdy, the motor is super quiet, and the yellow color is just gorgeous."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://placehold.co/100x100?text=MT" alt="Portrait of Mark T." loading="lazy" class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <p class="font-bold text-brand-dark">Mark T.</p>
+                                <p class="text-sm text-brand-gray">Verified Buyer</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- REVIEW 3 -->
+                    <article class="p-8 rounded-3xl bg-gray-50 border border-gray-100 shadow-sm relative md:col-span-2 lg:col-span-1">
+                        <i class="ph-fill ph-quotes text-4xl text-gray-200 absolute top-6 right-6" aria-hidden="true"></i>
+                        <div class="flex gap-1 text-brand-accent mb-4 text-xl" aria-label="4.5 out of 5 stars">
+                            <i class="ph-fill ph-star" aria-hidden="true"></i><i class="ph-fill ph-star" aria-hidden="true"></i><i class="ph-fill ph-star" aria-hidden="true"></i><i class="ph-fill ph-star" aria-hidden="true"></i><i class="ph-fill ph-star-half" aria-hidden="true"></i>
+                        </div>
+                        <p class="text-brand-dark mb-6 text-lg">"I was worried it would be hard to steer, but it handles like a dream. Highly recommend for city commuters."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://placehold.co/100x100?text=ER" alt="Portrait of Elena R." loading="lazy" class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <p class="font-bold text-brand-dark">Elena R.</p>
+                                <p class="text-sm text-brand-gray">Verified Buyer</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOTTOM CALL TO ACTION & INTERACTIVE FORM -->
+        <section id="buy" class="py-20 bg-brand-yellow">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-brand-dark mb-6">Ready to change how you move?</h2>
+                <p class="text-xl text-brand-dark/90 mb-10 max-w-2xl mx-auto">
+                    Book a free local test ride or request a custom build quote. Free shipping on all orders this month.
+                </p>
+
+                <!-- Interactive Lead Form with Validation -->
+                <form id="order-form" class="bg-white p-6 sm:p-8 rounded-3xl shadow-xl text-left max-w-xl mx-auto" novalidate>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="user-name" class="block text-sm font-bold text-brand-dark mb-1">Full Name</label>
+                            <input type="text" id="user-name" name="name" placeholder="Alex Rivera" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-dark">
+                        </div>
+                        <div>
+                            <label for="user-email" class="block text-sm font-bold text-brand-dark mb-1">Email Address</label>
+                            <input type="email" id="user-email" name="email" placeholder="alex@example.com" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-dark">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="bike-color" class="block text-sm font-bold text-brand-dark mb-1">Preferred Model Color</label>
+                        <select id="bike-color" name="color" class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-brand-dark">
+                            <option value="sunflower-yellow">Sunflower Yellow (Signature)</option>
+                            <option value="matte-black">Midnight Matte Black</option>
+                            <option value="sage-green">Urban Sage Green</option>
+                        </select>
+                    </div>
+
+                    <!-- Validation Feedback Message -->
+                    <p id="form-feedback" class="hidden text-sm font-semibold mb-4 p-3 rounded-xl" role="alert"></p>
+
+                    <button type="submit" class="w-full bg-brand-dark text-white hover:bg-gray-800 font-bold py-4 px-8 rounded-full text-lg transition-transform hover:scale-[1.02] shadow-lg">
+                        Request Custom Quote & Test Ride
+                    </button>
+                    <p class="mt-4 text-xs text-center text-brand-gray">14-day return policy. No spam, ever.</p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                
+                <!-- BRAND INFO -->
+                <div class="col-span-1">
+                    <a href="#" class="flex items-center gap-2 mb-4">
+                        <i class="ph-fill ph-bicycle text-3xl text-brand-yellow" aria-hidden="true"></i>
+                        <span class="font-bold text-2xl tracking-tight text-white">Palaso Bicycle.</span>
+                    </a>
+                    <p class="text-gray-400 text-sm mb-6">Creating joyful, practical, and sustainable mobility solutions for everyone.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram" class="text-gray-400 hover:text-brand-yellow transition-colors">
+                            <i class="ph-fill ph-instagram-logo text-2xl" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook" class="text-gray-400 hover:text-brand-yellow transition-colors">
+                            <i class="ph-fill ph-facebook-logo text-2xl" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube" class="text-gray-400 hover:text-brand-yellow transition-colors">
+                            <i class="ph-fill ph-youtube-logo text-2xl" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FOOTER LINKS -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4 text-white">Products</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#features" class="hover:text-brand-yellow transition-colors">Family Bike</a></li>
+                        <li><a href="#features" class="hover:text-brand-yellow transition-colors">City Bike</a></li>
+                        <li><a href="#details" class="hover:text-brand-yellow transition-colors">Accessories</a></li>
+                        <li><a href="#details" class="hover:text-brand-yellow transition-colors">Spare Parts</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg mb-4 text-white">Support</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#buy" class="hover:text-brand-yellow transition-colors">FAQ</a></li>
+                        <li><a href="#buy" class="hover:text-brand-yellow transition-colors">Manuals</a></li>
+                        <li><a href="#buy" class="hover:text-brand-yellow transition-colors">Warranty</a></li>
+                        <li><a href="#buy" class="hover:text-brand-yellow transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg mb-4 text-white">Legal</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#buy" class="hover:text-brand-yellow transition-colors">Terms of Service</a></li>
+                        <li><a href="#buy" class="hover:text-brand-yellow transition-colors">Privacy Policy</a></li>
+                        <li><a href="#buy" class="hover:text-brand-yellow transition-colors">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm text-center md:text-left">
+                    &copy; 2026 Palaso Bicycle. All rights reserved.
+                </p>
+                <div class="mt-4 md:mt-0 flex gap-2" aria-label="Supported payment methods: Stripe and PayPal">
+                    <i class="ph ph-stripe-logo text-3xl text-gray-400" aria-hidden="true"></i>
+                    <i class="ph ph-paypal-logo text-3xl text-gray-400" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
