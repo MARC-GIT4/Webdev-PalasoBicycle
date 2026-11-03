@@ -3,7 +3,7 @@ This is a (Unfinished Still work-in-progress) WebDev project,
 
 The brand and reviews are all fictional copy and should not be taken seriously
 
-Heres the visual concept of the landing page made in canva https://canva.link/x7uf7j054nu0l4l before programming
+Heres the visual concept of the landing page made in canva https://canva.link/x7uf7j054nu0l4l created before programming
 
 ↓
 
