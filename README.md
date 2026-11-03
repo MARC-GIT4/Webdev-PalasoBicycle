@@ -1,2 +1,3 @@
 # Webdev-PalasoBicycle
-This is my WebDev project
+This is a WebDev project for my OJT
+The brand and reviews are all fictional copy
