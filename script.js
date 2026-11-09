@@ -112,7 +112,7 @@ document.getElementById('footer-contact-link').addEventListener('click', () => {
 });
 
 // ==========================================
-// 6. LEGAL MODAL (HANDLES FOOTER LEGAL LINKS)
+// 6. ACCESSIBLE LEGAL MODAL
 // ==========================================
 const legalData = {
     terms: {
@@ -132,58 +132,139 @@ const legalData = {
 const legalModal = document.getElementById('legal-modal');
 const modalTitle = document.getElementById('modal-title');
 const modalBody = document.getElementById('modal-body');
+const closeModalBtn = document.getElementById('close-modal-btn');
+let lastFocusedElement = null;
 
 function closeLegalModal() {
     legalModal.classList.add('hidden');
+    if (lastFocusedElement) lastFocusedElement.focus();
 }
 
 document.querySelectorAll('[data-legal]').forEach(btn => {
     btn.addEventListener('click', () => {
+        lastFocusedElement = btn;
         const key = btn.getAttribute('data-legal');
         modalTitle.textContent = legalData[key].title;
         modalBody.textContent = legalData[key].body;
         legalModal.classList.remove('hidden');
+        closeModalBtn.focus(); // Move keyboard focus inside modal
     });
 });
 
-document.getElementById('close-modal-btn').addEventListener('click', closeLegalModal);
+closeModalBtn.addEventListener('click', closeLegalModal);
 document.getElementById('modal-ok-btn').addEventListener('click', closeLegalModal);
 legalModal.addEventListener('click', (e) => {
     if (e.target === legalModal) closeLegalModal();
 });
 
+// Closes Modal or Mobile Menu when pressing the Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        if (!legalModal.classList.contains('hidden')) closeLegalModal();
+        if (!mobileMenu.classList.contains('hidden')) {
+            toggleMenu(true);
+            menuBtn.focus();
+        }
+    }
+});
+
 // ==========================================
-// 7. FORM VALIDATION
+// 7. FORM VALIDATION WITH FIELD HIGHLIGHTING
 // ==========================================
 const orderForm = document.getElementById('order-form');
+const emailInput = document.getElementById('user-email');
 const feedback = document.getElementById('form-feedback');
+
+function setFieldError(inputEl, hasError) {
+    inputEl.classList.toggle('border-red-500', hasError);
+    inputEl.classList.toggle('ring-2', hasError);
+    inputEl.classList.toggle('ring-red-200', hasError);
+    inputEl.setAttribute('aria-invalid', String(hasError));
+}
+
+// Clear red error border as soon as user starts typing
+[nameInput, emailInput].forEach(input => {
+    input.addEventListener('input', () => setFieldError(input, false));
+});
 
 orderForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const nameVal = nameInput.value.trim();
-    const emailVal = document.getElementById('user-email').value.trim();
+    const emailVal = emailInput.value.trim();
     const selectedProduct = modelSelect.value;
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     feedback.classList.remove('hidden', 'bg-red-100', 'text-red-800', 'bg-green-100', 'text-green-800');
+    setFieldError(nameInput, false);
+    setFieldError(emailInput, false);
 
-    // Validate Name
     if (nameVal.length < 2) {
-        feedback.textContent = 'Please enter your full name.';
+        setFieldError(nameInput, true);
+        nameInput.focus();
+        feedback.textContent = 'Please enter your full name (at least 2 characters).';
         feedback.classList.add('bg-red-100', 'text-red-800');
         return;
     }
 
-    // Validate Email
     if (!emailPattern.test(emailVal)) {
-        feedback.textContent = 'Please enter a valid email address.';
+        setFieldError(emailInput, true);
+        emailInput.focus();
+        feedback.textContent = 'Please enter a valid email address (e.g., alex@example.com).';
         feedback.classList.add('bg-red-100', 'text-red-800');
         return;
     }
 
-    // Success State
     feedback.textContent = `Thanks, ${nameVal}! Your Palaso Bicycle request for "${selectedProduct}" has been sent to ${emailVal}.`;
     feedback.classList.add('bg-green-100', 'text-green-800');
     orderForm.reset();
 });
+
+// ==========================================
+// 8. INTERACTIVE HERO COLOR SWITCHER TABS
+// ==========================================
+const colorTabs = document.querySelectorAll('.color-tab');
+const heroBikeImg = document.getElementById('hero-bike-img');
+const colorLabel = document.getElementById('selected-color-label');
+
+colorTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const colorName = tab.getAttribute('data-color-name');
+        const imgSrc = tab.getAttribute('data-img-src');
+        const modelVal = tab.getAttribute('data-model-value');
+
+        // Update active ring state and ARIA attributes
+        colorTabs.forEach(t => {
+            t.classList.remove('ring-2', 'ring-brand-dark');
+            t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('ring-2', 'ring-brand-dark');
+        tab.setAttribute('aria-selected', 'true');
+
+        // Swap Hero Image and Label
+        heroBikeImg.src = imgSrc;
+        heroBikeImg.alt = `${colorName} 2026 Palaso Bicycle cargo e-bike side profile`;
+        colorLabel.textContent = `Color: ${colorName}`;
+
+        // Sync selection with the bottom Order Form dropdown
+        if (modelSelect) modelSelect.value = modelVal;
+    });
+});
+
+// ==========================================
+// 9. SCROLL REVEAL ANIMATION
+// ==========================================
+const revealSections = document.querySelectorAll('#features, #details, #reviews, #faq, #buy');
+
+revealSections.forEach(sec => sec.classList.add('reveal'));
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+revealSections.forEach(sec => revealObserver.observe(sec));
