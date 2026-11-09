@@ -5,22 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Experience the perfect blend of playful design, premium safety features, and effortless electric power with Palaso Bicycle.">
     <title>Palaso Bicycle — Modern E-Bike Landing Page</title>
+
+    <!-- Inline SVG Favicon (Prevents 404 favicon.ico console error) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FFD700'/><text y='.9em' x='12' font-size='75'>🚲</text></svg>">
     
     <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Phosphor Icons -->
+    <!-- Phosphor Icons & Tailwind CSS CDN -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="antialiased overflow-x-hidden selection:bg-brand-yellow selection:text-brand-dark">
+
+    <!-- SKIP TO CONTENT LINK (Keyboard Usability) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- ==========================================
          HEADER / NAVIGATION SECTION
@@ -76,7 +80,7 @@
     <!-- ==========================================
          MAIN CONTENT LANDMARK
          ========================================== -->
-    <main>
+    <main id="main-content">
 
         <!-- HERO SECTION -->
         <section class="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden bg-brand-light">
@@ -120,19 +124,28 @@
                         </div>
                     </div>
 
-                    <!-- HERO IMAGE -->
+                    <!-- HERO IMAGE + INTERACTIVE COLOR SWITCHER -->
                     <div class="lg:col-span-6 relative">
                         <div class="absolute inset-0 blob-bg transform scale-110 opacity-40 z-0 hidden md:block" aria-hidden="true"></div>
                         <img 
-                            src="https://placehold.co/800x600/FFD700/1A1A1A?text=Palaso+Bicycle+Hero" 
-                            alt="Yellow 2026 Palaso Bicycle cargo e-bike side profile" 
+                            id="hero-bike-img"
+                            src="https://placehold.co/800x600/FFD700/1A1A1A?text=Palaso+Sunflower+Yellow" 
+                            alt="Sunflower Yellow 2026 Palaso Bicycle cargo e-bike side profile" 
                             width="800"
                             height="600"
-                            class="relative z-10 w-full h-auto drop-shadow-2xl rounded-2xl transform transition-transform hover:-translate-y-2 duration-500"
+                            class="relative z-10 w-full h-auto drop-shadow-2xl rounded-2xl transform transition-all duration-500"
                         >
+
+                        <!-- Interactive Color Tabs -->
+                        <div class="relative z-10 mt-6 bg-white/90 backdrop-blur-md p-3 rounded-2xl shadow-soft border border-gray-100 flex items-center justify-between max-w-md mx-auto" role="tablist" aria-label="Choose bike color preview">
+                            <span id="selected-color-label" class="text-sm font-bold text-brand-dark pl-2">Color: Sunflower Yellow</span>
+                            <div class="flex gap-2">
+                                <button type="button" role="tab" aria-selected="true" aria-label="Preview Sunflower Yellow" data-color-name="Sunflower Yellow" data-model-value="Palaso Family Cargo Bike" data-img-src="https://placehold.co/800x600/FFD700/1A1A1A?text=Palaso+Sunflower+Yellow" class="color-tab w-8 h-8 rounded-full bg-[#FFD700] ring-2 ring-offset-2 ring-brand-dark transition-transform hover:scale-110"></button>
+                                <button type="button" role="tab" aria-selected="false" aria-label="Preview Midnight Matte Black" data-color-name="Midnight Matte Black" data-model-value="Palaso City Commuter Bike" data-img-src="https://placehold.co/800x600/1A1A1A/FFD700?text=Palaso+Matte+Black" class="color-tab w-8 h-8 rounded-full bg-[#1A1A1A] ring-offset-2 hover:scale-110 transition-transform"></button>
+                                <button type="button" role="tab" aria-selected="false" aria-label="Preview Urban Sage Green" data-color-name="Urban Sage Green" data-model-value="Palaso Family Cargo Bike" data-img-src="https://placehold.co/800x600/4A5D4E/FFFFFF?text=Palaso+Urban+Sage" class="color-tab w-8 h-8 rounded-full bg-[#4A5D4E] ring-offset-2 hover:scale-110 transition-transform"></button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
         </section>
 
         <!-- FEATURES GRID SECTION -->
