@@ -83,3 +83,31 @@ body {
         transform: none;
     }
 }
+
+/* ==========================================
+   4. SCROLLSPY ACTIVE NAVIGATION INDICATOR
+   ========================================== */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--brand-yellow);
+    border-radius: 9999px;
+    transition: width 0.25s ease-in-out;
+}
+
+.nav-link.active-nav {
+    color: var(--brand-accent-text);
+    font-weight: 700;
+}
+
+.nav-link.active-nav::after {
+    width: 100%;
+}
