@@ -6,6 +6,12 @@
     <meta name="description" content="Experience the perfect blend of playful design, premium safety features, and effortless electric power with Palaso Bicycle.">
     <title>Palaso Bicycle — Modern E-Bike Landing Page</title>
 
+    <!-- Open Graph Meta Tags for Clean Link Previews -->
+    <meta property="og:title" content="Palaso Bicycle — Modern Electric Cargo & City Bikes">
+    <meta property="og:description" content="Experience playful design, premium safety features, and effortless electric power. Book a test ride today.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://placehold.co/1200x630/FFD700/1A1A1A?text=Palaso+Bicycle">
+    
     <!-- Inline SVG Favicon (Prevents 404 favicon.ico console error) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FFD700'/><text y='.9em' x='12' font-size='75'>🚲</text></svg>">
     
@@ -41,12 +47,12 @@
                     </a>
                 </div>
 
-                <!-- DESKTOP NAVIGATION -->
+                <!-- DESKTOP NAVIGATION (With ScrollSpy .nav-link class) -->
                 <nav class="hidden md:flex space-x-8" aria-label="Main Navigation">
-                    <a href="#features" class="text-brand-dark hover:text-brand-accent font-medium transition-colors">Features</a>
-                    <a href="#details" class="text-brand-dark hover:text-brand-accent font-medium transition-colors">Details</a>
-                    <a href="#reviews" class="text-brand-dark hover:text-brand-accent font-medium transition-colors">Reviews</a>
-                    <a href="#faq" class="text-brand-dark hover:text-brand-accent font-medium transition-colors">FAQ</a>
+                    <a href="#features" class="nav-link text-brand-dark hover:text-brand-accent font-medium transition-colors py-1">Features</a>
+                    <a href="#details" class="nav-link text-brand-dark hover:text-brand-accent font-medium transition-colors py-1">Details</a>
+                    <a href="#reviews" class="nav-link text-brand-dark hover:text-brand-accent font-medium transition-colors py-1">Reviews</a>
+                    <a href="#faq" class="nav-link text-brand-dark hover:text-brand-accent font-medium transition-colors py-1">FAQ</a>
                 </nav>
 
                 <!-- CALL TO ACTION BUTTON (DESKTOP) -->
@@ -195,7 +201,7 @@
                 <!-- DETAIL ROW 1 -->
                 <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
                     <div class="mb-10 lg:mb-0 order-2 lg:order-1">
-                        <img src="https://placehold.co/600x500/1A1A1A/FFFFFF?text=Palaso+Family+Ride" alt="Parent riding the Palaso Bicycle with two children seated safely in the front cabin" loading="lazy" class="rounded-3xl shadow-xl w-full object-cover">
+                        <img src="bakfiets1.webp" alt="Palaso Bicycle" loading="lazy" class="rounded-3xl shadow-xl w-full object-cover">
                     </div>
                     <div class="order-1 lg:order-2">
                         <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">Designed for the whole family.</h2>
@@ -348,7 +354,7 @@
                     Book a free local test ride, order accessories, or request a custom Palaso Bicycle build quote.
                 </p>
 
-                <!-- Interactive Lead Form with Validation -->
+                <!-- Interactive Lead Form with Conditional Color Dropdown -->
                 <form id="order-form" class="bg-white p-6 sm:p-8 rounded-3xl shadow-xl text-left max-w-xl mx-auto" novalidate>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                         <div>
@@ -361,21 +367,34 @@
                         </div>
                     </div>
 
-                    <div class="mb-6">
+                    <!-- Product / Inquiry Dropdown -->
+                    <div class="mb-4">
                         <label for="bike-model" class="block text-sm font-bold text-brand-dark mb-1">Select Product or Inquiry</label>
-                        <select id="bike-model" name="model" class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-brand-dark">
-                            <option value="Palaso Family Cargo Bike">Palaso Family Cargo Bike (Sunflower Yellow)</option>
-                            <option value="Palaso City Commuter Bike">Palaso City Commuter Bike (Matte Black)</option>
+                        <select id="bike-model" name="model" required class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-brand-dark">
+                            <option value="" disabled selected>Choose a product or inquiry...</option>
+                            <option value="Palaso Family Cargo Bike">Palaso Family Cargo Bike</option>
+                            <option value="Palaso City Commuter Bike">Palaso City Commuter Bike</option>
                             <option value="Accessories & Rain Cover Pack">Accessories & Rain Cover Pack</option>
                             <option value="Spare Parts & Maintenance">Spare Parts & Maintenance Inquiry</option>
+                        </select>
+                    </div>
+
+                    <!-- Conditional Color Dropdown (Hidden until a Bicycle is selected) -->
+                    <div id="color-field-wrapper" class="hidden mb-6 transition-all duration-300" aria-hidden="true">
+                        <label for="bike-color" class="block text-sm font-bold text-brand-dark mb-1">Preferred Bicycle Color</label>
+                        <select id="bike-color" name="color" class="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-brand-dark">
+                            <option value="Sunflower Yellow">Sunflower Yellow (Signature)</option>
+                            <option value="Midnight Matte Black">Midnight Matte Black</option>
+                            <option value="Urban Sage Green">Urban Sage Green</option>
                         </select>
                     </div>
 
                     <!-- Validation Feedback Message -->
                     <p id="form-feedback" class="hidden text-sm font-semibold mb-4 p-3 rounded-xl" role="alert"></p>
 
-                    <button type="submit" class="w-full bg-brand-dark text-white hover:bg-gray-800 font-bold py-4 px-8 rounded-full text-lg transition-transform hover:scale-[1.02] shadow-lg">
-                        Request Custom Quote & Test Ride
+                    <button type="submit" id="submit-btn" class="w-full bg-brand-dark text-white hover:bg-gray-800 font-bold py-4 px-8 rounded-full text-lg transition-all hover:scale-[1.02] shadow-lg mt-2 flex items-center justify-center gap-3 disabled:opacity-75 disabled:cursor-not-allowed disabled:hover:scale-100">
+                        <i id="submit-spinner" class="ph-bold ph-circle-notch animate-spin text-2xl hidden" aria-hidden="true"></i>
+                        <span id="submit-text">Request Custom Quote & Test Ride</span>
                     </button>
                     <p class="mt-4 text-xs text-center text-brand-gray">14-day return policy. No spam, ever.</p>
                 </form>
