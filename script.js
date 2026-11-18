@@ -310,12 +310,23 @@ orderForm.addEventListener('submit', async (event) => {
     };
 
     try {
-        // This is for the Form API endpoint, send it over the network or simulate 1s network delay
-        if (FORM_API_ENDPOINT) {
-            await fetch(FORM_API_ENDPOINT, {
+        // If running live on Netlify (http/https), post directly to Netlify Forms;
+        // if opened locally as a file (file://), simulate a 1s delay.
+        const isLiveSite = window.location.protocol.startsWith('http');
+
+        if (isLiveSite) {
+            const formPayload = new URLSearchParams({
+                'form-name': 'palaso-orders',
+                name: leadData.name,
+                email: leadData.email,
+                model: leadData.product,
+                color: leadData.color
+            }).toString();
+
+            await fetch('/', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify(leadData)
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formPayload
             });
         } else {
             await new Promise(resolve => setTimeout(resolve, 1000));
