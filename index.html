@@ -10,7 +10,7 @@
     <meta property="og:title" content="Palaso Bicycle — Modern Electric Cargo & City Bikes">
     <meta property="og:description" content="Experience playful design, premium safety features, and effortless electric power. Book a test ride today.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://placehold.co/1200x630/FFD700/1A1A1A?text=Palaso+Bicycle">
+    <meta property="og:image" content="bakfietsOGI.webp">
     
     <!-- Inline SVG Favicon (Prevents 404 favicon.ico console error) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FFD700'/><text y='.9em' x='12' font-size='75'>🚲</text></svg>">
@@ -146,9 +146,9 @@
                         <div class="relative z-10 mt-6 bg-white/90 backdrop-blur-md p-3 rounded-2xl shadow-soft border border-gray-100 flex items-center justify-between max-w-md mx-auto" role="tablist" aria-label="Choose bike color preview">
                             <span id="selected-color-label" class="text-sm font-bold text-brand-dark pl-2">Color: Sunflower Yellow</span>
                             <div class="flex gap-2">
-                                <button type="button" role="tab" aria-selected="true" aria-label="Preview Sunflower Yellow" data-color-name="Sunflower Yellow" data-model-value="Palaso Family Cargo Bike" data-img-src="https://placehold.co/800x600/FFD700/1A1A1A?text=Palaso+Sunflower+Yellow" class="color-tab w-8 h-8 rounded-full bg-[#FFD700] ring-2 ring-offset-2 ring-brand-dark transition-transform hover:scale-110"></button>
-                                <button type="button" role="tab" aria-selected="false" aria-label="Preview Midnight Matte Black" data-color-name="Midnight Matte Black" data-model-value="Palaso City Commuter Bike" data-img-src="https://placehold.co/800x600/1A1A1A/FFD700?text=Palaso+Matte+Black" class="color-tab w-8 h-8 rounded-full bg-[#1A1A1A] ring-offset-2 hover:scale-110 transition-transform"></button>
-                                <button type="button" role="tab" aria-selected="false" aria-label="Preview Urban Sage Green" data-color-name="Urban Sage Green" data-model-value="Palaso Family Cargo Bike" data-img-src="https://placehold.co/800x600/4A5D4E/FFFFFF?text=Palaso+Urban+Sage" class="color-tab w-8 h-8 rounded-full bg-[#4A5D4E] ring-offset-2 hover:scale-110 transition-transform"></button>
+                                <button type="button" role="tab" aria-selected="true" aria-label="Preview Sunflower Yellow" data-color-name="Sunflower Yellow" data-model-value="Palaso Family Cargo Bike" data-img-src="bakfietsY.webp" class="color-tab w-8 h-8 rounded-full bg-[#FFD700] ring-2 ring-offset-2 ring-brand-dark transition-transform hover:scale-110"></button>
+                                <button type="button" role="tab" aria-selected="false" aria-label="Preview Midnight Matte Black" data-color-name="Midnight Matte Black" data-model-value="Palaso City Commuter Bike" data-img-src="bakfietsB.webp" class="color-tab w-8 h-8 rounded-full bg-[#1A1A1A] ring-offset-2 hover:scale-110 transition-transform"></button>
+                                <button type="button" role="tab" aria-selected="false" aria-label="Preview Urban Sage Green" data-color-name="Urban Sage Green" data-model-value="Palaso Family Cargo Bike" data-img-src="bakfietsG.webp" class="color-tab w-8 h-8 rounded-full bg-[#4A5D4E] ring-offset-2 hover:scale-110 transition-transform"></button>
                             </div>
                         </div>
                     </div>
@@ -201,7 +201,7 @@
                 <!-- DETAIL ROW 1 -->
                 <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
                     <div class="mb-10 lg:mb-0 order-2 lg:order-1">
-                        <img src="bakfiets1.webp" alt="Palaso Bicycle" loading="lazy" class="rounded-3xl shadow-xl w-full object-cover">
+                        <img src="bakfietsFam.webp" alt="Palaso Bicycle" loading="lazy" class="rounded-3xl shadow-xl w-full object-cover">
                     </div>
                     <div class="order-1 lg:order-2">
                         <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">Designed for the whole family.</h2>
@@ -234,7 +234,7 @@
                         </a>
                     </div>
                     <div class="order-2">
-                        <img src="https://placehold.co/600x500/1A1A1A/FFFFFF?text=Palaso+Frame+Close-up" alt="Close-up of the Palaso Bicycle lightweight aluminum frame and heavy-duty kickstand" loading="lazy" class="rounded-3xl shadow-xl w-full object-cover">
+                        <img src="bakfietsStand.webp" alt="Close-up of the Palaso Bicycle lightweight aluminum frame and heavy-duty kickstand" loading="lazy" class="rounded-3xl shadow-xl w-full object-cover">
                     </div>
                 </div>
 
@@ -354,8 +354,11 @@
                     Book a free local test ride, order accessories, or request a custom Palaso Bicycle build quote.
                 </p>
 
-                <!-- Interactive Lead Form with Conditional Color Dropdown -->
-                <form id="order-form" class="bg-white p-6 sm:p-8 rounded-3xl shadow-xl text-left max-w-xl mx-auto" novalidate>
+                <!-- Added name="palaso-orders", method="POST", and data-netlify="true" -->
+                <form id="order-form" name="palaso-orders" method="POST" data-netlify="true" class="bg-white p-6 sm:p-8 rounded-3xl shadow-xl text-left max-w-xl mx-auto" novalidate>
+                 <!-- Required hidden input for Netlify AJAX forms -->
+                <input type="hidden" name="form-name" value="palaso-orders">
+                    
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                         <div>
                             <label for="user-name" class="block text-sm font-bold text-brand-dark mb-1">Full Name</label>
